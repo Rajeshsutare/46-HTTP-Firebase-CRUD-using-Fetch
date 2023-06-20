@@ -57,6 +57,7 @@ const makeApiCall = (methodName, apiUrl, msgbody) =>{
     })
     
     .then(res=>{
+        loader.classList.add('d-none')
     return res.json();
     })
 }
@@ -75,6 +76,9 @@ makeApiCall('GET',postUrl)
         title: 'Oops...',
         text: 'Something went wrong!',
       })
+})
+.finally(()=>{
+    loader.classList.add('d-none')
 })
 
 const oncreatePost = (eve) =>{
