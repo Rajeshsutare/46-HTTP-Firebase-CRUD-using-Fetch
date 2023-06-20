@@ -46,7 +46,7 @@ const objToArray = (obj) =>{
 
 
 const makeApiCall = (methodName, apiUrl, msgbody) =>{
-    loader.classList.remove('d-none')
+    
     return fetch(apiUrl,{
         method : methodName,
         body : msgbody,
@@ -57,7 +57,7 @@ const makeApiCall = (methodName, apiUrl, msgbody) =>{
     })
     
     .then(res=>{
-        loader.classList.add('d-none')
+        
     return res.json();
     })
 }
